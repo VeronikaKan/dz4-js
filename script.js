@@ -88,29 +88,29 @@
 // получаем let newArr = [1,2,3,4,”string”, “hello”, false, true]
 
 
-const replaceBoolean = (arr) => {
-    return arr.map((el) => {
-        if (el === true || el === false) {
-            return !el
-        } else {
-            return el
-        }
-    })
-}
-console.log(replaceBoolean([1,2,3,4,"string", "hello", true, false] ));
+// const replaceBoolean = (arr) => {
+//     return arr.map((el) => {
+//         if (el === true || el === false) {
+//             return !el
+//         } else {
+//             return el
+//         }
+//     })
+// }
+// console.log(replaceBoolean([1,2,3,4,"string", "hello", true, false] ));
 // ..........................................task 2
 // Напишите функцию, которая принимает строку и повторяем каждый ее символ 2 раза.
 // Пример входных данных: "test"
 // ВЫВОД: "tteesstt"
 
-const getDoubleLetter = (str) => {
- let arr = str.split("")
- let newArr = arr.map((el) => {
-return el + el
- })
- return newArr.join("")
-}
-console.log(getDoubleLetter("test"));
+// const getDoubleLetter = (str) => {
+//  let arr = str.split("")
+//  let newArr = arr.map((el) => {
+// return el + el
+//  })
+//  return newArr.join("")
+// }
+// console.log(getDoubleLetter("test"));
 
 
 // ..........................................task 3
@@ -119,46 +119,49 @@ console.log(getDoubleLetter("test"));
 // ВЫВОД: [ 'Ваня', 'Антон', 2, 'Джонни', 3, 'Бекнур' ]
 
 
-let arr = ['Ваня', 'Антон', 'Ян', 'Джонни', 'Том', 'Бекнур']
-const getQantityOfNames = (arr) => {
-return newArr = arr.map((el) => {
-return el === 'Ян' || el === 'Том' ? el.length : el
-})}
-console.log(getQantityOfNames(['Ваня', 'Антон', 'Ян', 'Джонни', 'Том', 'Бекнур']));
+// let arr = ['Ваня', 'Антон', 'Ян', 'Джонни', 'Том', 'Бекнур']
+// const getQantityOfNames = (arr) => {
+// return newArr = arr.map((el) => {
+// return el === 'Ян' || el === 'Том' ? el.length : el
+// })}
+// console.log(getQantityOfNames(['Ваня', 'Антон', 'Ян', 'Джонни', 'Том', 'Бекнур']));
 // ..........................................task 4
 // Напишите функцию которая принимает массив из чисел и возводит четные числа в квадрат.
 
-const exponentiation = (arr) => {
-return  newArr = arr.map((el) => {
-    if(el % 2 === 0){
-        return el ** 2
-    }else{
-        return el
-    }
-})}
-console.log(exponentiation([1, 2, 3, 4, 5, 6]));
+// const exponentiation = (arr) => {
+// return  newArr = arr.map((el) => {
+//     if(el % 2 === 0){
+//         return el ** 2 // это хорошо, а мы знаем метод который возводит в квалрат?
+//     }else{
+//         return el
+//     }
+// })}
+// console.log(exponentiation([1, 2, 3, 4, 5, 6]));
+
 
 // ..........................................task 5
 // Напишите функцию которая принимает массив из строк и чисел,
 // и выводит длину каждой строки, а если число, то выводит его индекс
 
 
-const getLenghtAndIndex = (arr) => {
-return newArr = arr.map((el,index) => {
-    if(typeof(el) === "string"){
-        return el.length
-    }else if(typeof(el) === "number"){
-        return index
-    }
-})}
-console.log(getLenghtAndIndex(["hello", "hi",23, 3]));
+// const getLenghtAndIndex = (arr) => {
+// return newArr = arr.map((el,index) => {
+//     if(typeof(el) === "string"){
+//         return el.length
+//     }else if(typeof(el) === "number"){
+//         return index
+//     }
+// })}
+// console.log(getLenghtAndIndex(["hello", "hi",23, 3]));
 
 // ..........................................task 6
 // Напишите функцию которая принимает массив из чисел, и умножает каждое число на последнее значение массива.
-const multiplyByLastElem = (arr) => {
-let lastEl = arr[arr.length-1]
-return newArr = arr.map((el) => {
-return el * lastEl
-})}
+// const multiplyByLastElem = (arr) => {
+// let lastEl = arr[arr.length-1]
+// return newArr = arr.map((el) => { // тут нам newArr не нужен. Мы сразу возращаем резултат, и хранить этот результат нам ненужно
+// return el * lastEl
+// })}
 
-console.log(multiplyByLastElem ([2, 3, 4, 5 ,6 ,7,8]));
+// console.log(multiplyByLastElem ([2, 3, 4, 5 ,6 ,7,8]));
+
+// Отличная работа! 

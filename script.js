@@ -165,3 +165,41 @@
 // console.log(multiplyByLastElem ([2, 3, 4, 5 ,6 ,7,8]));
 
 // Отличная работа! 
+
+
+
+// Написать функцию, которая принимает массив строк и возвращает новую строку, состоящую из всех элементов этого массива, объединенных в одну строку, с использованием метода reduce().
+
+const getString = (arr) => {
+return arr.reduce((acc, rec) => {
+return acc + rec
+},"")
+}
+console.log(getString(["hello", "hi" ,"bye"]));
+// Написать функцию, которая принимает массив строк и возвращает количество символов во всех строках с использованием метода reduce().
+
+// const getNumbers = (arr) => {
+// return arr.reduce((acc,rec) => {
+// return acc + rec.length
+// },0)
+// }
+// console.log(getNumbers(["hello", "hi" ,"bye"]));
+
+const getNumbers = (arr) => {
+    return arr.reduce((acc,rec) => {
+    return [...acc,rec.length]
+    },[])
+    }
+    console.log(getNumbers(["hello", "hi" ,"bye"]));
+// Написать функцию, которая принимает массив чисел и возвращает новый массив, состоящий только из элементов, которые больше заданного значения, с использованием метода reduce(), (Без использования метода push()) 
+
+const getNum = (arr) => {
+return arr.reduce((acc, rec) => {
+if(rec > 5){
+    return [...acc, rec]
+} 
+return [...acc]
+// return rec > 5? [...acc, rec] : [...acc]
+}, [])
+}
+console.log(getNum([2,4,6,3,8,10]));

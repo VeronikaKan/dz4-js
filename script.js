@@ -171,35 +171,37 @@
 // Написать функцию, которая принимает массив строк и возвращает новую строку, состоящую из всех элементов этого массива, объединенных в одну строку, с использованием метода reduce().
 
 const getString = (arr) => {
-return arr.reduce((acc, rec) => {
-return acc + rec
-},"")
+    return arr.reduce((acc, rec) => {
+        return acc + rec
+    }, "")
 }
-console.log(getString(["hello", "hi" ,"bye"]));
+console.log(getString(["hello", "hi", "bye"]));
 // Написать функцию, которая принимает массив строк и возвращает количество символов во всех строках с использованием метода reduce().
 
-// const getNumbers = (arr) => {
-// return arr.reduce((acc,rec) => {
-// return acc + rec.length
-// },0)
-// }
-// console.log(getNumbers(["hello", "hi" ,"bye"]));
-
 const getNumbers = (arr) => {
-    return arr.reduce((acc,rec) => {
-    return [...acc,rec.length]
-    },[])
-    }
-    console.log(getNumbers(["hello", "hi" ,"bye"]));
+    return arr.reduce((acc, rec) => {
+        return acc + rec.length
+    }, 0)
+}
+console.log(getNumbers(["hello", "hi", "bye"]));
+
+// const getNumbers = (arr) => {
+//     return arr.reduce((acc,rec) => {
+//     return [...acc, acc + rec.length]
+//     },[])
+//     }
+//     console.log(getNumbers(["hello", "hi" ,"bye"]));
 // Написать функцию, которая принимает массив чисел и возвращает новый массив, состоящий только из элементов, которые больше заданного значения, с использованием метода reduce(), (Без использования метода push()) 
 
-const getNum = (arr) => {
-return arr.reduce((acc, rec) => {
-if(rec > 5){
-    return [...acc, rec]
-} 
-return [...acc]
-// return rec > 5? [...acc, rec] : [...acc]
-}, [])
+const getNum = (arr, num) => { // 2. здесь бы я принял эту 5-ку под ключевым словом num
+    return arr.reduce((acc, rec) => {
+        if (rec > num) {    // 3. и здесь я бы уже сравнивал num
+            return [...acc, rec]
+        }
+        return [...acc]
+        // return rec > 5? [...acc, rec] : [...acc]
+    }, [])
 }
-console.log(getNum([2,4,6,3,8,10]));
+console.log(getNum([2, 4, 6, 3, 8, 10], 5));  // 1. здесь бы я передал вторым аргументом вашу 5-ку
+
+// // // // // // Очень хорошо! Я бы даже сказал подозрительно хорошо)) Молодец, так держать!  

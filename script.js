@@ -170,20 +170,20 @@
 
 // Написать функцию, которая принимает массив строк и возвращает новую строку, состоящую из всех элементов этого массива, объединенных в одну строку, с использованием метода reduce().
 
-const getString = (arr) => {
-    return arr.reduce((acc, rec) => {
-        return acc + rec
-    }, "")
-}
-console.log(getString(["hello", "hi", "bye"]));
+// const getString = (arr) => {
+//     return arr.reduce((acc, rec) => {
+//         return acc + rec
+//     }, "")
+// }
+// console.log(getString(["hello", "hi", "bye"]));
 // Написать функцию, которая принимает массив строк и возвращает количество символов во всех строках с использованием метода reduce().
 
-const getNumbers = (arr) => {
-    return arr.reduce((acc, rec) => {
-        return acc + rec.length
-    }, 0)
-}
-console.log(getNumbers(["hello", "hi", "bye"]));
+// const getNumbers = (arr) => {
+//     return arr.reduce((acc, rec) => {
+//         return acc + rec.length
+//     }, 0)
+// }
+// console.log(getNumbers(["hello", "hi", "bye"]));
 
 // const getNumbers = (arr) => {
 //     return arr.reduce((acc,rec) => {
@@ -193,15 +193,58 @@ console.log(getNumbers(["hello", "hi", "bye"]));
 //     console.log(getNumbers(["hello", "hi" ,"bye"]));
 // Написать функцию, которая принимает массив чисел и возвращает новый массив, состоящий только из элементов, которые больше заданного значения, с использованием метода reduce(), (Без использования метода push()) 
 
-const getNum = (arr, num) => { // 2. здесь бы я принял эту 5-ку под ключевым словом num
-    return arr.reduce((acc, rec) => {
-        if (rec > num) {    // 3. и здесь я бы уже сравнивал num
-            return [...acc, rec]
-        }
-        return [...acc]
-        // return rec > 5? [...acc, rec] : [...acc]
-    }, [])
-}
-console.log(getNum([2, 4, 6, 3, 8, 10], 5));  // 1. здесь бы я передал вторым аргументом вашу 5-ку
+// const getNum = (arr, num) => { // 2. здесь бы я принял эту 5-ку под ключевым словом num
+//     return arr.reduce((acc, rec) => {
+//         if (rec > num) {    // 3. и здесь я бы уже сравнивал num
+//             return [...acc, rec]
+//         }
+//         return [...acc]
+// return rec > 5? [...acc, rec] : [...acc]
+//     }, [])
+// }
+// console.log(getNum([2, 4, 6, 3, 8, 10], 5));  // 1. здесь бы я передал вторым аргументом вашу 5-ку
 
 // // // // // // Очень хорошо! Я бы даже сказал подозрительно хорошо)) Молодец, так держать!  
+/////////////////////////////////////object////////////////////////////////////////////////////////////////////////////////
+// 1. Создать объект user с полями name, age и email. Вывести значения полей в консоль.
+//      -Добавить ключ id со значением 1 
+//      -Добавить ключ second name
+//      -Удалить ключ age
+//      -Изменит значение ключа email
+//      -Сделать так чтоб в дальнейшем этот объект не могли изменять
+
+let user = {
+    name: "Yulia",
+    age: 16,
+    email: "yulia@gmail.com"
+};
+user.id = 1;
+user.second_name = "Stepanova"
+delete user.age
+user.email = "gfhfhf@gmail.com"
+Object.freeze(user)
+console.log(user);
+
+
+// 2. Создайте объект заработных плат obj = {Ширин: '1000',
+//    Айжан:'500', Атай: '200'}; Выведите на экран зарплату Атая и Ширин.
+let obj = {
+    Ширин: '1000',
+    Айжан: '500',
+    Атай: '200'
+}
+
+console.log(`zarplata Shirin:${obj.Ширин}, zarplata Ataya: ${obj.Атай}`);
+
+
+
+// 3. Создать объект team с полем members, представляющим собой массив имен участников. 
+//    Добавить нового участника в массив и вывести обновленный объект в консоль. 
+//    (Учитываем, то что мы можем не знать список участников которые уже записаны)
+
+let team = {
+    members: ["Atay","Shirin","Aijan"]
+}
+team.members = [...team.members ,"Sezim","Sasha"]
+console.log(team);
+

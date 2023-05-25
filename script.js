@@ -213,28 +213,28 @@
 //      -Изменит значение ключа email
 //      -Сделать так чтоб в дальнейшем этот объект не могли изменять
 
-let user = {
-    name: "Yulia",
-    age: 16,
-    email: "yulia@gmail.com"
-};
-user.id = 1;
-user.second_name = "Stepanova"
-delete user.age
-user.email = "gfhfhf@gmail.com"
-Object.freeze(user)
-console.log(user);
+// let user = {
+//     name: "Yulia",
+//     age: 16,
+//     email: "yulia@gmail.com"
+// };
+// user.id = 1;
+// user.['second name'] = "Stepanova"
+// delete user.age
+// user.email = "gfhfhf@gmail.com"
+// Object.freeze(user)
+// console.log(user);
 
 
 // 2. Создайте объект заработных плат obj = {Ширин: '1000',
 //    Айжан:'500', Атай: '200'}; Выведите на экран зарплату Атая и Ширин.
-let obj = {
-    Ширин: '1000',
-    Айжан: '500',
-    Атай: '200'
-}
-
-console.log(`zarplata Shirin:${obj.Ширин}, zarplata Ataya: ${obj.Атай}`);
+// let obj = {
+//     Ширин: '1000',
+//     Айжан: '500',
+//     Атай: '200'
+// }
+// delete obj.Айжан
+// console.log(`zarplata Shirin:${obj.Ширин}, zarplata Ataya: ${obj.Атай}`);
 
 
 
@@ -242,9 +242,46 @@ console.log(`zarplata Shirin:${obj.Ширин}, zarplata Ataya: ${obj.Атай}`
 //    Добавить нового участника в массив и вывести обновленный объект в консоль. 
 //    (Учитываем, то что мы можем не знать список участников которые уже записаны)
 
-let team = {
-    members: ["Atay","Shirin","Aijan"]
-}
-team.members = [...team.members ,"Sezim","Sasha"]
-console.log(team);
+// let team = {
+//     members: ["Atay","Shirin","Aijan"]
+// }
+// team.members = [...team.members ,"Sezim","Sasha"]
+// console.log(team);
 
+
+// 1. Вам дан обьект, с ключами herbivores, predators, All animals. 
+//    Заполните значение ключа All animals всеми животными.
+
+let obj = {
+    herbivores: ["Заяц", "Корова", "Лошадь"],
+    predators: ["Волк", "Медведь", "Лунтик"], 
+    "All animals": []
+}
+obj[ "All animals"] = [obj.herbivores + obj.predators]
+console.log(obj);
+
+
+// 2. Вам дан обьект obj, напишите функцию которая удалит поля со 
+//    значениями undefined и вывести в консоль обновленный обьект 
+
+const deleteKey = (obj) => {
+let arr = Object.keys(obj)
+ arr.forEach((el) => {
+if(obj[el] === undefined){
+delete obj[el]
+}else{
+    obj[el]
+}
+})
+return obj
+}
+console.log(deleteKey(obj = {
+    id: 1,
+    title: "tuna sandwich",
+    subtitle: undefined,
+    price: "20$",
+    "new price": null,
+    description: "tuna sandwich best sandwich in the world",
+    "more info": undefined,
+    categories: null
+}));

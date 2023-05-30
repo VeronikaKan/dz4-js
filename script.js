@@ -252,36 +252,149 @@
 // 1. Вам дан обьект, с ключами herbivores, predators, All animals. 
 //    Заполните значение ключа All animals всеми животными.
 
-let obj = {
-    herbivores: ["Заяц", "Корова", "Лошадь"],
-    predators: ["Волк", "Медведь", "Лунтик"], 
-    "All animals": []
-}
-obj[ "All animals"] = [obj.herbivores + obj.predators]
-console.log(obj);
+// let obj = {
+//     herbivores: ["Заяц", "Корова", "Лошадь"],
+//     predators: ["Волк", "Медведь", "Лунтик"], 
+//     "All animals": []
+// }
+// obj[ "All animals"] = [obj.herbivores + obj.predators]
+// console.log(obj);
 
 
 // 2. Вам дан обьект obj, напишите функцию которая удалит поля со 
 //    значениями undefined и вывести в консоль обновленный обьект 
 
-const deleteKey = (obj) => {
-let arr = Object.keys(obj)
- arr.forEach((el) => {
-if(obj[el] === undefined){
-delete obj[el]
-}else{
-    obj[el]
+// const deleteKey = (obj) => {
+// let arr = Object.keys(obj)
+//  arr.forEach((el) => {
+// if(obj[el] === undefined){
+// delete obj[el]
+// }else{
+//     obj[el]
+// }
+// })
+// return obj
+// }
+// console.log(deleteKey({
+//     id: 1,
+//     title: "tuna sandwich",
+//     subtitle: undefined,
+//     price: "20$",
+//     "new price": null,
+//     description: "tuna sandwich best sandwich in the world",
+//     "more info": undefined,
+//     categories: null
+// }));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 1. Напишите функцию, которая 
+// принимает объект, как аргумент 
+// и возвращает новый объект. 
+// Только с полями, у которых тип значения - строка;
+
+// Input: { name: 'Baha', isAdmin: true }
+// Output: { name: 'Baha' }
+
+// Input: { isAdmin: true }
+// Output: {}
+
+// const returnStr = (obj) => {
+// const newObj = {}
+// let arr = Object.keys(obj)
+//  arr.forEach((el) => {
+//  return  typeof(obj[el]) === "string" ? newObj[el] = obj[el]: newObj
+// })
+// return newObj
+// }
+// console.log(returnStr({ name: 'Baha', isAdmin: true }));
+
+
+// 2. Напишите функцию, которая принимает объект,
+// как аргумент и возвращает новый массив с именами ключей - значение, которых false
+
+// Input: { isAdmin: false, isBaha: true }
+// Output: ['isAdmin']
+
+
+// const returnArr = (obj) => {
+// let arr = Object.keys(obj)
+// return arr.filter((el) => {
+// return obj[el] === false 
+// })
+// }
+// console.log(returnArr({ isAdmin: false, isBaha: true }));
+
+
+// 3. Напишите функцию, которая 
+// принимает массив объектов с полем id. 
+// Например [[{id: '100'}, {id: 2}]] и возвращает массив этих id
+
+// Input: [{id: 1},{id: 2},{id: 3},{id: 4}]
+// Output: [1,2,3,4]
+
+// const convert = (arr) => {
+// return arr.map((el) => {
+// return el.id
+// })
+// }
+// console.log(convert([{id: 1},{id: 2},{id: 3},{id: 4}]));
+
+// 4. Вам дан объект product = {
+//     name: "headphones",
+//     price: 100,
+//     discount: 0
+// }. Найдите стоимость объекта с ценой, и если она больше 100, снизьте ее на 10%.
+//    Если это не так, сделайте скидку на 7%. Обновите объект.
+
+// const getSale = (product) => {
+    
+//    if  (product.price > 100){
+//      product.discount = 10
+//    } else{
+//      product.discount = 7
+//    }
+//    return product
+// }
+// console.log(getSale( {
+//         name: "headphones",
+//       price: 110,
+//        discount: 0
+//     }));
+// 5. Вам дан массив из обьектов, создайте функцию которая добовляет в список новый 
+//    продукт и вычисляет общее количество калорий. Функция должна передавать новый 
+//    продукт например: ('banana', '500').
+
+ 
+const list = [
+    {
+        title: 'sandwich',
+        'калорий': '200',
+    },
+    {
+        title: 'chocolate',
+        'калорий': '1000',
+    },
+    {
+        title: 'chicken',
+        'калорий': '700',
+    },
+    {
+        title: 'burger',
+        'калорий': '1000',
+    }, 
+]
+const calcKkal = (name,count) => {
+const newProduct = {title:name,
+    'калорий': count
 }
-})
-return obj
+list.push(newProduct)
+return list.reduce((acc,product) => {
+return Number(product.калорий) + acc
+},0)
 }
-console.log(deleteKey(obj = {
-    id: 1,
-    title: "tuna sandwich",
-    subtitle: undefined,
-    price: "20$",
-    "new price": null,
-    description: "tuna sandwich best sandwich in the world",
-    "more info": undefined,
-    categories: null
-}));
+console.log(calcKkal('banana', '500'));
+console.log(list);
+
+
+
